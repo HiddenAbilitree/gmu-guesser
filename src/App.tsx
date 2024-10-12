@@ -1,5 +1,6 @@
+import { SampleMap } from './components/SampleMap'
 function App() {
-    return <div></div>
+  return <SampleMap />
 }
 
 export default App
