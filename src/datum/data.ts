@@ -21,8 +21,8 @@ export const maps: MapData[] = [
     panorama: 'pic2.jpg',
   },
   {
-    locationName: '',
-    latlong: [38.831318, -77.306197],
+    locationName: 'Corner of a Bridge behind Dominion',
+    latlong: [38.833044, -77.305026],
     panorama: 'pic3.jpg',
   },
 ];
