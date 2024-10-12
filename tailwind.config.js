@@ -2,7 +2,19 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        component: 'hsl(var(--component))',
+        secondary: 'hsl(var(--secondary))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        input: 'hsl(var(--input))',
+        btn: {
+          background: 'hsl(var(--btn))',
+          'background-hover': 'hsl(var(--btn-hover))',
+        },
+      },
+    },
   },
   plugins: [],
-}
+};
