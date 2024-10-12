@@ -27,12 +27,12 @@ export const maps: MapData[] = [
   },
   {
     locationName: 'Table Outside The Spot',
-    latlong: [38.833460, -77.305060],
-    panorama: 'pic3.jpg',
+    latlong: [38.83346881,-77.30505978],
+    panorama: 'pic4.jpg',
   },
   {
     locationName: 'Disc Gold Field Behind The Hub',
-    latlong: [38.830320, -77.304241],
-    panorama: 'pic3.jpg',
+    latlong: [38.83032822,-77.30418394],
+    panorama: 'pic5.jpg',
   },
 ];
