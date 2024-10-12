@@ -16,8 +16,13 @@ export const maps: MapData[] = [
     panorama: 'pic1.jpg',
   },
   {
-    locationName: 'Horizon Floor Four Window',
+    locationName: 'Fenwick Library D-Wing Entrance',
     latlong: [38.831318, -77.306197],
     panorama: 'pic2.jpg',
+  },
+  {
+    locationName: '',
+    latlong: [38.831318, -77.306197],
+    panorama: 'pic3.jpg',
   },
 ];
