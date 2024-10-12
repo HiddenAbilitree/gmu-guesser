@@ -7,7 +7,7 @@ export type MapData = {
 export const maps: MapData[] = [
   {
     locationName: 'MIX Lab',
-    latlong: [0, 0],
+    latlong: [38.8310979,-77.3076892],
     panorama: 'IMG_4077.jpg',
   },
 ];
