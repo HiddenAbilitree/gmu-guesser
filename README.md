@@ -1,5 +1,7 @@
 # React + TypeScript + Vite
 
+GMU Guesser, written with React, TypeScript, and Vite, is a fun twist on the popular webbrowser game GeoGuesser. Players are dropped in a random location within GMU Campus, and they must figure out where they are located on a map. Custom rules can be implemeneted, such as enabling/disabiling panning and zooming, time to find location, etc. The closer your guess is to the actual location, the more points you score!
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
