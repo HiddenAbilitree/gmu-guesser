@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+
 export const Map = () => {
   // create a ref of the map
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -41,7 +42,7 @@ export const Map = () => {
   }, [mapAnimating]);
 
   return (
-    <div className="absolute z-50 transition-all w-[30vw] h-[30vh] bottom-5 hover:w-[50vw] hover:h-[50vh] right-5">
+    <div className="absolute z-50 transition-all ease-in-out w-[30vw] h-[30vh] bottom-5 hover:w-[50vw] hover:h-[50vh] right-5">
       <div
         id="map"
         className="w-full h-full shadow-md opacity-60 hover:opacity-100 rounded-3xl hover:rounded-lg"
