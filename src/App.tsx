@@ -1,6 +1,12 @@
-import { SampleMap } from './components/SampleMap'
+import { Map } from './components/Map';
+import { View } from './components/View';
 function App() {
-  return <SampleMap />
+  return (
+    <>
+      <Map />
+      <View />
+    </>
+  );
 }
 
-export default App
+export default App;
