@@ -35,4 +35,39 @@ export const maps: MapData[] = [
     latlong: [38.83032822,-77.30418394],
     panorama: 'pic5.jpg',
   },
+  {
+    locationName: 'Volleyball by Dorms',
+    latlong: [38.833539, -77.305786],
+    panorama: 'dan pan1.jpg',
+  },
+  {
+    locationName: 'Population Health Center',
+    latlong: [38.834277, -77.309660],
+    panorama: 'dan pan2.jpg',
+  },
+  {
+    locationName: 'Outside Exploratory Hall',
+    latlong: [38.830541, -77.305904],
+    panorama: 'dan pan5.jpg',
+  },
+  {
+    locationName: 'Outside Engineering Building and Aquatic Fitness Center',
+    latlong: [38.827751, -77.304857],
+    panorama: 'dan pan6.jpg',
+  },
+  {
+    locationName: 'Enterprise Bus Stop',
+    latlong: [38.829153, -77.305394],
+    panorama: 'dan pan7.jpg',
+  },
+  {
+    locationName: 'Munitas Statue by JC',
+    latlong: [38.829136, -77.308670],
+    panorama: 'dan pan8.jpg',
+  },
+  {
+    locationName: 'Mason Statue by JC',
+    latlong: [38.830352, -77.308433],
+    panorama: 'dan pan10.jpg',
+  },
 ];
