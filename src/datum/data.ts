@@ -30,4 +30,9 @@ export const maps: MapData[] = [
     latlong: [38.833460, -77.305060],
     panorama: 'pic3.jpg',
   },
+  {
+    locationName: 'Disc Gold Field Behind The Hub',
+    latlong: [38.830320, -77.304241],
+    panorama: 'pic3.jpg',
+  },
 ];
