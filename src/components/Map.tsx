@@ -6,7 +6,7 @@ export const Map = () => {
   // create a ref of the map
   const mapRef = useRef<maplibregl.Map | null>(null);
   const [mapAnimating, setMapAnimating] = useState(false);
-
+  const markerRef = useRef<maplibregl.Marker | null>(null);
   useEffect(() => {
     const map = new maplibregl.Map({
       container: 'map', // container id
@@ -25,6 +25,16 @@ export const Map = () => {
     });
 
     mapRef.current = map;
+    map.on('click', (e) => {
+      markerRef.current?.remove();
+      const marker = new maplibregl.Marker({
+        color: '#FF0000',
+        draggable: true,
+      })
+        .setLngLat(e.lngLat)
+        .addTo(map);
+      markerRef.current = marker;
+    });
     return () => mapRef.current?.remove();
   }, []);
 
@@ -48,7 +58,7 @@ export const Map = () => {
         className="w-full h-full shadow-md opacity-60 hover:opacity-100 rounded-3xl hover:rounded-lg"
         onAnimationStart={() => setMapAnimating(true)}
         onAnimationEnd={() => setMapAnimating(false)}
-      />
+      ></div>
     </div>
   );
 };

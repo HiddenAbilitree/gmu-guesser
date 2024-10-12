@@ -6,12 +6,6 @@ import backgroundSphericalImageProjectionMappingPictureFilePathLocation from '@/
 export const View = () => {
   return (
     <div id="canvas-container" className="w-screen h-screen bg-gray-600">
-      {/* <Canvas camera={{ position: [0, 0, 0.1] }}>
-        <OrbitControls />
-        <Suspense fallback={null}>
-          <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/evening_road_01_2k.hdr" />
-        </Suspense>
-      </Canvas> */}
       <Canvas camera={{ position: [0, -10, 0], fov: 60 }}>
         <hemisphereLight intensity={0.5} color="white" groundColor="black" />
         <Environment
@@ -26,9 +20,6 @@ export const View = () => {
           reverseOrbit
           rotateSpeed={0.25}
           enableDamping
-
-          //minPolarAngle={Math.PI / 2.5}
-          //maxPolarAngle={Math.PI / 2.55}
         />
       </Canvas>
     </div>
