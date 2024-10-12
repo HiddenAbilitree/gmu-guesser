@@ -25,4 +25,9 @@ export const maps: MapData[] = [
     latlong: [38.833044, -77.305026],
     panorama: 'pic3.jpg',
   },
+  {
+    locationName: 'Table Outside The Spot',
+    latlong: [38.833460, -77.305060],
+    panorama: 'pic3.jpg',
+  },
 ];
