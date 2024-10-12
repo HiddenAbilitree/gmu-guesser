@@ -15,4 +15,9 @@ export const maps: MapData[] = [
     latlong: [38.831831, -77.308017],
     panorama: 'pic1.jpg',
   },
+  {
+    locationName: 'Horizon Floor Four Window',
+    latlong: [38.831318, -77.306197],
+    panorama: 'pic2.jpg',
+  },
 ];
