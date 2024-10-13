@@ -50,14 +50,6 @@ export const maps: MapData[] = [
       'Seen often when walking from parking to JC ',
   },
   {
-    locationName: 'Mason Statue by JC',
-    latlong: [38.830352, -77.308433],
-    panorama: 'dan pan10.jpg',
-    description:
-      'Iconic statue of George Mason, popular among students as he is dressed up based on upcoming events. proposed in 1989. This bronze statue cost between 30k-50k, becoming a notable landmark for students on campus. ' +
-      'Between JC and deLaski Performing Arts Building',
-  },
-  {
     locationName: 'MIX Lab in Horizon Hall',
     latlong: [38.8310979, -77.3076892],
     panorama: 'IMG_4077.jpg',
@@ -199,5 +191,8 @@ export const maps: MapData[] = [
     locationName: 'Slave Owner Statue',
     latlong: [38.830388252525466, -77.30845142049195],
     panorama: 'pic23.jpg',
+    description:
+      'Iconic statue of George Mason, popular among students as he is dressed up based on upcoming events. proposed in 1989. This bronze statue cost between 30k-50k, becoming a notable landmark for students on campus. ' +
+      'Between JC and deLaski Performing Arts Building',
   },
 ];
