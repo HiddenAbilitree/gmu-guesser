@@ -86,4 +86,9 @@ export const maps: MapData[] = [
     latlong: [38.832919, -77.305329],
     panorama: 'pic9.jpg',
   },
+  {
+    locationName: 'Water Tower',
+    latlong: [38.834408, -77.304609],
+    panorama: 'pic10.jpg',
+  },
 ];
