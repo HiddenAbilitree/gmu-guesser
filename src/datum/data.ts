@@ -1,9 +1,4 @@
-export type MapData = {
-  locationName: string;
-  latlong: [number, number];
-  panorama: string;
-};
-
+import { MapData } from '@/Types';
 export const maps: MapData[] = [
   {
     locationName: 'MIX Lab',
@@ -27,12 +22,12 @@ export const maps: MapData[] = [
   },
   {
     locationName: 'Table Outside The Spot',
-    latlong: [38.83346881,-77.30505978],
+    latlong: [38.83346881, -77.30505978],
     panorama: 'pic4.jpg',
   },
   {
     locationName: 'Disc Gold Field Behind The Hub',
-    latlong: [38.83032822,-77.30418394],
+    latlong: [38.83032822, -77.30418394],
     panorama: 'pic5.jpg',
   },
   {
@@ -42,7 +37,7 @@ export const maps: MapData[] = [
   },
   {
     locationName: 'Population Health Center',
-    latlong: [38.834277, -77.309660],
+    latlong: [38.834277, -77.30966],
     panorama: 'dan pan2.jpg',
   },
   {
@@ -62,7 +57,7 @@ export const maps: MapData[] = [
   },
   {
     locationName: 'Munitas Statue by JC',
-    latlong: [38.829136, -77.308670],
+    latlong: [38.829136, -77.30867],
     panorama: 'dan pan8.jpg',
   },
   {
@@ -77,7 +72,7 @@ export const maps: MapData[] = [
   },
   {
     locationName: 'Walkway behind the Satellite',
-    latlong: [38.83079472,-77.30375301],
+    latlong: [38.83079472, -77.30375301],
     panorama: 'pic7.jpg',
   },
   {

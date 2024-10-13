@@ -1,6 +1,6 @@
 import { OrbitControls, Environment } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { DataumProps } from '@/App';
+import { DataumProps } from '@/Types';
 
 export const View = (props: DataumProps) => {
   return (

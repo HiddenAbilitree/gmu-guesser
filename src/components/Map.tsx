@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import { DataumProps } from '@/App';
+import { DataumProps } from '@/Types';
 
 export const Map = (props: DataumProps) => {
   // create a ref of the map
@@ -10,6 +10,24 @@ export const Map = (props: DataumProps) => {
   const markerRef = useRef<maplibregl.Marker | null>(null);
   const [markerExists, setMarkerExists] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const clickCallback = useCallback(
+    (e: maplibregl.MapMouseEvent) => {
+      if (submitted) return;
+      markerRef.current?.remove();
+
+      const marker = new maplibregl.Marker({
+        color: '#FF0000',
+        draggable: false,
+      })
+        .setLngLat(e.lngLat)
+        .addTo(e.target);
+      markerRef.current = marker;
+      setMarkerExists(true);
+    },
+    [submitted],
+  );
+
   useEffect(() => {
     const map = new maplibregl.Map({
       container: 'map', // container id
@@ -28,21 +46,19 @@ export const Map = (props: DataumProps) => {
     });
 
     mapRef.current = map;
-    map.on('click', (e) => {
-      markerRef.current?.remove();
-
-      const marker = new maplibregl.Marker({
-        color: '#FF0000',
-        draggable: false,
-      })
-        .setLngLat(e.lngLat)
-        .addTo(map);
-      markerRef.current = marker;
-      setMarkerExists(true);
-    });
 
     return () => mapRef.current?.remove();
   }, []);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    map.on('click', clickCallback);
+    return () => {
+      map.off('click', clickCallback);
+    };
+  }, [mapRef, clickCallback]);
 
   useEffect(() => {
     const frame = () => {
@@ -132,7 +148,7 @@ export const Map = (props: DataumProps) => {
           }}
           className="z-50 px-5 py-2 text-left bg-red-500 rounded-b-lg select-none hover:bg-red-600 peer text-foreground"
         >
-          Submit
+          {submitted ? 'Next' : 'Submit'}
         </button>
       ) : (
         <div className="z-50 px-5 py-2 text-left rounded-b-lg select-none peer bg-btn-background text-foreground">
