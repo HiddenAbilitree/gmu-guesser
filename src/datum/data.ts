@@ -75,4 +75,9 @@ export const maps: MapData[] = [
     latlong: [38.831328, -77.303889],
     panorama: 'pic6.jpg',
   },
+  {
+    locationName: 'Bridge Behind the Hub',
+    latlong: [38.83079472,-77.30375301],
+    panorama: 'p6.jpg',
+  },
 ];
