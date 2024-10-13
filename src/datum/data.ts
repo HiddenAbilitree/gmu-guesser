@@ -67,7 +67,7 @@ export const maps: MapData[] = [
     latlong: [38.827751, -77.304857],
     panorama: 'dan pan6.jpg',
     description: 'Built in the 1980s, the Engineering building has continued to develop and evolve alongside technology. '
-    + '"HERD Rankings in top 100 for Engineering and Computing. Computing highest in Virginia" '
+    + '"HERD Rankings in top 100 for Engineering and Computing. Computing highest in Virginia." This location is also near the AFC, with a very large competetive and recreational pool.'
     + 'Learn more: https://cec.gmu.edu/about/news-and-information/brief-history-college'
   },
   {
@@ -114,6 +114,7 @@ export const maps: MapData[] = [
     locationName: 'Water Tower',
     latlong: [38.834408, -77.304609],
     panorama: 'pic10.jpg',
+    description: 'Holds 2.5 million gallons of water! Built in 1978, which continued to be developed until April 2020. More info: https://www.fairfaxwater.org/news/projects/university-tank-replacement'
   },
   {
     locationName: 'Playground Next to Water Tower',
@@ -144,11 +145,13 @@ export const maps: MapData[] = [
     locationName: 'Peterson Hall Rain Garden',
     latlong: [38.834179, -77.309615],
     panorama: 'pic16.jpg',
+    description: 'Second largest building at GMU, costing $71 million dollars. Consists of all six academic departments, with a rain garden and amphitheater for events (https://giving.gmu.edu/peterson-family-health-sciences-hall/).'
   },
   {
     locationName: 'Bioretention Facility Outside Peterson',
     latlong: [38.833980, -77.310112],
     panorama: 'pic17.jpg',
+    description: '"Rain gardens allow the storm water to penetrate into the ground and restore the water table, while simultaneously removing pollutants (https://facilities.gmu.edu/resources/land-development/ms4/mcm5-post-construction-stormwater-management/rain-gardens-bioretention/)."'
   },
   {
     locationName: 'Rogers Whitetop Picnic Zone',
@@ -164,5 +167,6 @@ export const maps: MapData[] = [
     locationName: 'The RAC Field',
     latlong: [38.832208, -77.312903],
     panorama: 'pic20.jpg',
+    description: '"RAC Field is available for open rec to Mason affiliates when there are not scheduled reservations (https://recreation.gmu.edu/pool-hours/)." Play pickleball, football, soccer, or other spots here!'
   },
 ];
