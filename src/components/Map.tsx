@@ -146,7 +146,7 @@ export const Map = (
           .getLngLat()
           .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
     );
-    setGameData((currentState) => [...currentState, Math.round(distance)]);
+    setGameData((currentState) => [...currentState, Math.round(distance > 999 ? 1000 : distance)]);
 
     map.addLayer({
       id: 'routeLine',
@@ -168,10 +168,10 @@ export const Map = (
       Math.floor(
         Math.max(
           0,
-          1000 -
+          (function(x){ return x > 999 ? 1000 : x; })(1000 -
             markerRef
-              .current!.getLngLat()
-              .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
+            .current!.getLngLat()
+            .distanceTo(new LngLat(data.latlong[0], data.latlong[1]))),
         ),
       ),
       {
