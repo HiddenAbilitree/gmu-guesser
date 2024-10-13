@@ -2,46 +2,6 @@ import { MapData } from '@/Types';
 
 export const maps: MapData[] = [
   {
-    locationName: 'MIX Lab in Horizon Hall',
-    latlong: [38.8310979, -77.3076892],
-    panorama: 'IMG_4077.jpg',
-    description: 'The MIX, or Mason Innovative Exchange, is a space for students and staff to create and explore.'
-    + ' It offers various programs and events, as well as a machine inventory of 3D Printers and Scanners, Laser/Metal cutting, Resin Printing, Wood Shop, and so much more!' 
-    + 'Visit https://www.mix.gmu.edu/ to find out more.'
-  },
-  {
-    locationName: 'Horizon Hall Floor Four Window',
-    latlong: [38.831831, -77.308017],
-    panorama: 'pic1.jpg',
-    description: 'Easter Egg! We worked on most of our project here, a very comfortable working space.'
-  },
-  {
-    locationName: 'Fenwick Library D-Wing Entrance',
-    latlong: [38.831318, -77.306197],
-    panorama: 'pic2.jpg',
-    description: 'First built in 1967, this central library holds 1.5 million books, in addition to having various research and technological resources.'
-    + 'It serves as a great study space, especially with the Argo Tea Cafe inside. More info: https://library.gmu.edu/locations/fenwick'
-  },
-  {
-    locationName: 'Corner of a Bridge behind Dominion',
-    latlong: [38.833044, -77.305026],
-    panorama: 'pic3.jpg',
-    description: 'Just a relaxing spot'
-  },
-  {
-    locationName: 'Table Outside The Spot',
-    latlong: [38.83346881, -77.30505978],
-    panorama: 'pic4.jpg',
-    description: 'A common, scenic hangout area after grabbing food from The Spot. The spot is known for their great vegan and vegeterian options.'
-  },
-  {
-    locationName: 'Disc Golf Field Behind The Hub',
-    latlong: [38.83032822, -77.30418394],
-    panorama: 'pic5.jpg',
-    description: 'Niche location to play disc golf with friends! Also next to The Hub, a common area for meetings, events, and games for students.'
-    + 'Check out upcoming activities: https://studentcenters.gmu.edu/hub/'
-  },
-  {
     locationName: 'Volleyball by Dorms',
     latlong: [38.833539, -77.305786],
     panorama: 'dan pan1.jpg',
@@ -89,6 +49,46 @@ export const maps: MapData[] = [
     panorama: 'dan pan10.jpg',
     description: 'Iconic statue of George Mason, popular among students as he is dressed up based on upcoming events. proposed in 1989. This bronze statue cost between 30k-50k, becoming a notable landmark for students on campus. '
     + 'Between JC and deLaski Performing Arts Building'
+  },
+  {
+    locationName: 'MIX Lab in Horizon Hall',
+    latlong: [38.8310979, -77.3076892],
+    panorama: 'IMG_4077.jpg',
+    description: 'The MIX, or Mason Innovative Exchange, is a space for students and staff to create and explore.'
+    + ' It offers various programs and events, as well as a machine inventory of 3D Printers and Scanners, Laser/Metal cutting, Resin Printing, Wood Shop, and so much more!' 
+    + 'Visit https://www.mix.gmu.edu/ to find out more.'
+  },
+  {
+    locationName: 'Horizon Hall Floor Four Window',
+    latlong: [38.831831, -77.308017],
+    panorama: 'pic1.jpg',
+    description: 'Easter Egg! We worked on most of our project here, a very comfortable working space.'
+  },
+  {
+    locationName: 'Fenwick Library D-Wing Entrance',
+    latlong: [38.831318, -77.306197],
+    panorama: 'pic2.jpg',
+    description: 'First built in 1967, this central library holds 1.5 million books, in addition to having various research and technological resources.'
+    + 'It serves as a great study space, especially with the Argo Tea Cafe inside. More info: https://library.gmu.edu/locations/fenwick'
+  },
+  {
+    locationName: 'Corner of a Bridge behind Dominion',
+    latlong: [38.833044, -77.305026],
+    panorama: 'pic3.jpg',
+    description: 'Just a relaxing spot'
+  },
+  {
+    locationName: 'Table Outside The Spot',
+    latlong: [38.83346881, -77.30505978],
+    panorama: 'pic4.jpg',
+    description: 'A common, scenic hangout area after grabbing food from The Spot. The spot is known for their great vegan and vegeterian options.'
+  },
+  {
+    locationName: 'Disc Golf Field Behind The Hub',
+    latlong: [38.83032822, -77.30418394],
+    panorama: 'pic5.jpg',
+    description: 'Niche location to play disc golf with friends! Also next to The Hub, a common area for meetings, events, and games for students.'
+    + 'Check out upcoming activities: https://studentcenters.gmu.edu/hub/'
   },
   {
     locationName: 'Bridge Behind the Hub',
