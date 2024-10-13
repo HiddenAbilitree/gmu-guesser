@@ -85,4 +85,9 @@ export const maps: MapData[] = [
     latlong: [38.831414, -77.304414],
     panorama: 'pic8.jpg',
   },
+  {
+    locationName: 'Table Behind Dominion',
+    latlong: [38.832919, -77.305329],
+    panorama: 'pic9.jpg',
+  },
 ];
