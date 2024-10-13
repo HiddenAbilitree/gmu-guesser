@@ -1,4 +1,9 @@
-import { MapData } from '@/Types';
+export type MapData = {
+  locationName: string;
+  latlong: [number, number];
+  panorama: string;
+};
+
 export const maps: MapData[] = [
   {
     locationName: 'MIX Lab',
