@@ -13,9 +13,7 @@ import { DataumProps } from '@/Types';
 export const Map = (
   props: DataumProps & {
     changeCurrentMap: () => void;
-  } & { setGameData: Dispatch<SetStateAction<number[]>> } & {
-    gameData: number[];
-  },
+  } & { setGameData: Dispatch<SetStateAction<number[]>> },
 ) => {
   // create a ref of the map
   const mapRef = useRef<maplibregl.Map | null>(null);
@@ -24,7 +22,6 @@ export const Map = (
   const [markerExists, setMarkerExists] = useState(false);
 
   const answerRef = useRef<maplibregl.Marker | null>(null);
-
   const [source, setSource] = useState<GeoJSONSource | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
@@ -89,7 +86,7 @@ export const Map = (
       map.off('click', clickCallback);
     };
   }, [mapRef, clickCallback]);
-
+  const { data, changeCurrentMap, setGameData } = props;
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -107,7 +104,7 @@ export const Map = (
       color: '#0AFF00',
       draggable: false,
     })
-      .setLngLat(props.data.latlong.reverse() as [number, number])
+      .setLngLat(data.latlong.reverse() as [number, number])
       .addTo(map);
     answerRef.current = answer;
 
@@ -118,7 +115,7 @@ export const Map = (
         type: 'LineString',
         coordinates: [
           userMarker.getLngLat().toArray(),
-          props.data.latlong as [number, number],
+          data.latlong as [number, number],
         ],
       },
     });
@@ -128,10 +125,9 @@ export const Map = (
       1000 -
         userMarker
           .getLngLat()
-          .distanceTo(new LngLat(props.data.latlong[0], props.data.latlong[1])),
+          .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
     );
-    props.setGameData([...props.gameData, Math.floor(distance)]);
-    console.log(props.gameData);
+    setGameData((currentState) => [...currentState, Math.floor(distance)]);
 
     map.addLayer({
       id: 'routeLine',
@@ -146,7 +142,7 @@ export const Map = (
         'line-width': 8,
       },
     });
-  }, [submitted, source]);
+  }, [submitted, source, data.latlong, setGameData]);
 
   const parentRef = useRef<HTMLDivElement | null>(null);
   const [mouseEntered, setMouseEntered] = useState(false);
@@ -193,7 +189,7 @@ export const Map = (
           <button
             onClick={() => {
               setSubmitted(false);
-              props.changeCurrentMap();
+              changeCurrentMap();
             }}
             className="peer z-50 select-none rounded-b-lg bg-red-500 px-5 py-2 text-left text-foreground hover:bg-red-600"
           >

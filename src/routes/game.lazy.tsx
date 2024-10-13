@@ -30,7 +30,6 @@ function Game() {
             data={currentMap}
             changeCurrentMap={changeGame}
             setGameData={setGameData}
-            gameData={gameData}
           />
           <View data={currentMap} />
         </>
