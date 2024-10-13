@@ -94,6 +94,6 @@ export const maps: MapData[] = [
   {
     locationName: 'Playground Next to Water Tower',
     latlong: [38.835397, -77.305194],
-    panorama: 'pic10.jpg',
+    panorama: 'pic11.jpg',
   },
 ];
