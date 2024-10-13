@@ -5,12 +5,12 @@ export function EndGUI(props: { data: number[] }) {
       {props.data.map((x: number, i: number) => (
         <div key={i} className="flex flex-col items-center justify-center">
           <div className="text-xl font-semibold">
-            Round {i + 1}: {x} meters
+            Round {i + 1}: {x} points
           </div>
         </div>
       ))}
       Total Score: {props.data.reduce((a, b) => a + b, 0)}
-      <Link to="/" className="p-2 text-white bg-blue-600 rounded-lg">
+      <Link to="/" className="rounded-lg bg-blue-600 p-2 text-white">
         Play Again
       </Link>
     </div>

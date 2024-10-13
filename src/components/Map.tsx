@@ -182,11 +182,11 @@ export const Map = (
       onMouseLeave={() => setMouseEntered(false)}
       onMouseDown={() => setMouseHolding(true)}
       onMouseUp={() => setMouseHolding(false)}
-      className="absolute flex flex-col z-40 transition-all ease-in-out w-[30vw] h-[30vh] bottom-5 map-open:w-[50vw] map-open:h-[50vh] right-5"
+      className="absolute bottom-5 right-5 z-40 flex h-[30vh] w-[30vw] flex-col transition-all ease-in-out map-open:h-[50vh] map-open:w-[50vw]"
     >
       <div
         id="map"
-        className="w-full h-full transition-all shadow-md opacity-60 map-open:opacity-100 rounded-t-3xl map-open:rounded-t-lg bg-slate-200"
+        className="h-full w-full rounded-t-3xl bg-slate-200 opacity-60 shadow-md transition-all map-open:rounded-t-lg map-open:opacity-100"
       ></div>
       {markerExists ? (
         submitted ? (
@@ -195,7 +195,7 @@ export const Map = (
               setSubmitted(false);
               props.changeCurrentMap();
             }}
-            className="z-50 px-5 py-2 text-left bg-red-500 rounded-b-lg select-none hover:bg-red-600 peer text-foreground"
+            className="peer z-50 select-none rounded-b-lg bg-red-500 px-5 py-2 text-left text-foreground hover:bg-red-600"
           >
             Next
           </button>
@@ -204,13 +204,13 @@ export const Map = (
             onClick={() => {
               setSubmitted(true);
             }}
-            className="z-50 px-5 py-2 text-left bg-red-500 rounded-b-lg select-none hover:bg-red-600 peer text-foreground"
+            className="peer z-50 select-none rounded-b-lg bg-red-500 px-5 py-2 text-left text-foreground hover:bg-red-600"
           >
             Submit
           </button>
         )
       ) : (
-        <div className="z-50 px-5 py-2 text-left rounded-b-lg select-none peer bg-btn-background text-foreground">
+        <div className="peer z-50 select-none rounded-b-lg bg-btn-background px-5 py-2 text-left text-foreground">
           Pick a location
         </div>
       )}

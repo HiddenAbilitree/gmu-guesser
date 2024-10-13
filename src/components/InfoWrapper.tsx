@@ -17,9 +17,9 @@ export const InfoWrapper = ({ title, children }: InfoWrapperProps) => {
   }, [title]);
 
   return (
-    <div className="w-screen h-screen bg-zinc-800">
+    <div className="h-screen w-screen bg-zinc-800">
       <Canvas
-        className="absolute blur-2xl w-screen h-screen brightness-50 top-0"
+        className="absolute top-0 h-screen w-screen blur-2xl brightness-50"
         camera={{
           position: [0, -10, 0],
           fov: 60,
@@ -37,7 +37,7 @@ export const InfoWrapper = ({ title, children }: InfoWrapperProps) => {
           enableRotate={false}
         />
       </Canvas>
-      <div className="absolute top-0 left-0 right-0 bottom-0">{children}</div>
+      <div className="absolute bottom-0 left-0 right-0 top-0">{children}</div>
     </div>
   );
 };
