@@ -96,4 +96,9 @@ export const maps: MapData[] = [
     latlong: [38.835397, -77.305194],
     panorama: 'pic11.jpg',
   },
+  {
+    locationName: 'UPS Store Front',
+    latlong: [38.834670, -77.307547],
+    panorama: 'pic12.jpg',
+  },
 ];
