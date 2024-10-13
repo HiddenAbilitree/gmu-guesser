@@ -9,6 +9,18 @@ import {
 import maplibregl, { GeoJSONSource, LngLat } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { DataumProps } from '@/Types';
+import {
+  animate,
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
+import {
+  HiChevronDoubleRight,
+  HiOutlineLocationMarker,
+  HiOutlinePaperAirplane,
+} from 'react-icons/hi';
 
 export const Map = (
   props: DataumProps & {
@@ -89,6 +101,11 @@ export const Map = (
 
   const { data, changeCurrentMap, setGameData } = props;
 
+  const scoreCounter = useMotionValue(0);
+  const roundedScoreCounter = useTransform(scoreCounter, (latest) =>
+    Math.round(latest),
+  );
+
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -144,7 +161,25 @@ export const Map = (
         'line-width': 8,
       },
     });
-  }, [submitted, source, data.latlong, setGameData]);
+
+    scoreCounter.set(0);
+    animate(
+      scoreCounter,
+      Math.floor(
+        Math.max(
+          0,
+          1000 -
+            markerRef
+              .current!.getLngLat()
+              .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
+        ),
+      ),
+      {
+        ease: 'easeOut',
+        duration: 1.5,
+      },
+    );
+  }, [submitted, source, data.latlong, setGameData, scoreCounter]);
 
   const parentRef = useRef<HTMLDivElement | null>(null);
   const [mouseEntered, setMouseEntered] = useState(false);
@@ -159,7 +194,7 @@ export const Map = (
     }
 
     ref.removeAttribute('data-map-open');
-  }, [parentRef, mouseEntered, mouseHolding]);
+  }, [parentRef, mouseEntered, mouseHolding, submitted]);
 
   useEffect(() => {
     setMarkerExists(false);
@@ -180,30 +215,35 @@ export const Map = (
       onMouseLeave={() => setMouseEntered(false)}
       onMouseDown={() => setMouseHolding(true)}
       onMouseUp={() => setMouseHolding(false)}
-      className="absolute bottom-5 right-5 z-40 flex h-[30vh] w-[30vw] flex-col transition-all ease-in-out map-open:h-[50vh] map-open:w-[50vw]"
+      className="absolute bottom-5 right-5 z-40 flex flex-col items-end transition-all ease-in-out"
     >
+      <AnimatePresence>
+        {submitted && (
+          <motion.div
+            initial={{ opacity: 0, y: -25 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -25 }}
+            transition={{
+              type: 'spring',
+            }}
+            className="my-4 flex max-w-[30vw] select-none flex-col rounded-lg bg-black/50 p-5 text-foreground"
+          >
+            <h1 className="text-xl font-medium">
+              <motion.span className="font-mono">
+                {roundedScoreCounter}
+              </motion.span>{' '}
+              points
+            </h1>
+            <p>{data.description}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div
         id="map"
-        className="h-full w-full rounded-t-3xl bg-slate-200 opacity-60 shadow-md transition-all map-open:rounded-t-lg map-open:opacity-100"
+        className="h-[30vh] w-[30vw] rounded-t-3xl bg-slate-200 opacity-60 shadow-md transition-all map-open:h-[50vh] map-open:w-[50vw] map-open:rounded-t-lg map-open:opacity-100"
       ></div>
 
-      {submitted && (
-        <div className="fixed left-1/2 top-1/2 isolate z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-lg bg-black p-5 text-foreground">
-          <h1>
-            Points:{' '}
-            {Math.floor(
-              Math.max(
-                0,
-                1000 -
-                  markerRef
-                    .current!.getLngLat()
-                    .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
-              ),
-            )}
-          </h1>
-          <p>{data.description}</p>
-        </div>
-      )}
       {markerExists ? (
         submitted ? (
           <button
@@ -211,23 +251,26 @@ export const Map = (
               setSubmitted(false);
               changeCurrentMap();
             }}
-            className="peer z-50 select-none rounded-b-lg bg-red-500 px-5 py-2 text-left text-foreground hover:bg-red-600"
+            className="z-50 flex w-full select-none items-center justify-end gap-2 rounded-b-lg bg-red-500 px-5 py-2 text-right text-foreground hover:bg-red-600"
           >
             Next
+            <HiChevronDoubleRight />
           </button>
         ) : (
           <button
             onClick={() => {
               setSubmitted(true);
             }}
-            className="peer z-50 select-none rounded-b-lg bg-red-500 px-5 py-2 text-left text-foreground hover:bg-red-600"
+            className="z-50 flex w-full select-none items-center justify-end gap-2 rounded-b-lg bg-red-500 px-5 py-2 text-right text-foreground hover:bg-red-600"
           >
             Submit
+            <HiOutlinePaperAirplane />
           </button>
         )
       ) : (
-        <div className="peer z-50 select-none rounded-b-lg bg-btn-background px-5 py-2 text-left text-foreground">
+        <div className="z-50 flex w-full select-none items-center justify-end gap-2 rounded-b-lg bg-btn-background px-5 py-2 text-right text-foreground">
           Pick a location
+          <HiOutlineLocationMarker />
         </div>
       )}
     </div>
