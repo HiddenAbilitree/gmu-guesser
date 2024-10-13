@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import maplibregl from 'maplibre-gl';
+import maplibregl, { LngLat } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { DataumProps } from '@/Types';
 
@@ -97,6 +97,15 @@ export const Map = (props: DataumProps) => {
         },
       },
     });
+    const distance = Math.max(
+      0,
+      1000 -
+        userMarker
+          .getLngLat()
+          .distanceTo(new LngLat(props.data.latlong[0], props.data.latlong[1])),
+    );
+
+    console.log(distance);
     map.addLayer({
       id: 'route',
       type: 'line',

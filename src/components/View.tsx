@@ -9,6 +9,7 @@ export const View = (props: DataumProps) => {
       <Canvas
         camera={{
           position: [0, -10, 0],
+          rotation: [90, 90, 90],
           fov: 60,
         }}
       >
