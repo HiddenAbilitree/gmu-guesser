@@ -101,4 +101,9 @@ export const maps: MapData[] = [
     latlong: [38.834670, -77.307547],
     panorama: 'pic12.jpg',
   },
+  {
+    locationName: 'East Building Entrance',
+    latlong: [38.833146, -77.308040],
+    panorama: 'pic13.jpg',
+  },
 ];
