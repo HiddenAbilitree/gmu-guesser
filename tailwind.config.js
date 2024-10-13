@@ -16,5 +16,12 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('map-open', [
+        '&:is([data-map-open] *)',
+        '&:is([data-map-open])',
+      ]);
+    },
+  ],
 };
