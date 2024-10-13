@@ -111,4 +111,9 @@ export const maps: MapData[] = [
     latlong: [38.83283, -77.30868],
     panorama: 'pic14.jpg',
   },
+  {
+    locationName: 'Finley Parking Lot',
+    latlong: [38.833608, -77.309346],
+    panorama: 'pic15.jpg',
+  },
 ];
