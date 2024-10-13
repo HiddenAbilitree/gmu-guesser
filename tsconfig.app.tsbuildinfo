@@ -1,0 +1,1 @@
+{"root":["./src/Types.ts","./src/main.tsx","./src/routeTree.gen.ts","./src/vite-env.d.ts","./src/components/EndGUI.tsx","./src/components/InfoWrapper.tsx","./src/components/Map.tsx","./src/components/View.tsx","./src/datum/data.ts","./src/routes/__root.tsx","./src/routes/game.lazy.tsx","./src/routes/index.lazy.tsx"],"version":"5.6.3"}

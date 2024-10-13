@@ -3,8 +3,9 @@ import { Canvas } from '@react-three/fiber';
 import { DataumProps } from '@/Types';
 
 export const View = (props: DataumProps) => {
+  console.log('Rendered View');
   return (
-    <div id="canvas-container" className="h-screen w-screen bg-gray-600">
+    <div id="canvas-container" className="h-screen w-screen bg-black">
       {/* set default camera rotation */}
       <Canvas
         camera={{

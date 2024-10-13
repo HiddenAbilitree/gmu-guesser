@@ -36,7 +36,7 @@ export const Map = (
   const answerRef = useRef<maplibregl.Marker | null>(null);
   const [source, setSource] = useState<GeoJSONSource | null>(null);
   const [submitted, setSubmitted] = useState(false);
-
+  console.log('Rendered Map');
   useEffect(() => {
     const map = new maplibregl.Map({
       container: 'map', // container id
@@ -99,12 +99,12 @@ export const Map = (
     };
   }, [mapRef, clickCallback]);
 
-  const { data, changeCurrentMap, setGameData } = props;
-
   const scoreCounter = useMotionValue(0);
   const roundedScoreCounter = useTransform(scoreCounter, (latest) =>
     Math.round(latest),
   );
+
+  const { data, changeCurrentMap, setGameData } = props;
 
   useEffect(() => {
     const map = mapRef.current;
@@ -119,6 +119,7 @@ export const Map = (
     }
     if (!submitted) return;
     if (!source) return;
+
     const answer = new maplibregl.Marker({
       color: '#0AFF00',
       draggable: false,
@@ -146,7 +147,10 @@ export const Map = (
           .getLngLat()
           .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
     );
-    setGameData((currentState) => [...currentState, Math.round(distance > 999 ? 1000 : distance)]);
+    setGameData((currentState) => [
+      ...currentState,
+      Math.round(distance > 999 ? 1000 : distance),
+    ]);
 
     map.addLayer({
       id: 'routeLine',
@@ -168,10 +172,14 @@ export const Map = (
       Math.floor(
         Math.max(
           0,
-          (function(x){ return x > 999 ? 1000 : x; })(1000 -
-            markerRef
-            .current!.getLngLat()
-            .distanceTo(new LngLat(data.latlong[0], data.latlong[1]))),
+          (function (x) {
+            return x > 999 ? 1000 : x;
+          })(
+            1000 -
+              markerRef
+                .current!.getLngLat()
+                .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
+          ),
         ),
       ),
       {

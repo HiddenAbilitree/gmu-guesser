@@ -14,13 +14,7 @@ function Game() {
   const [currentMap, setCurrentMap] = useState<MapData>(
     maps[Math.floor(Math.random() * maps.length)],
   );
-  const [roundCounter, setRoundCounter] = useState(0);
-  const array: MapData[] = maps;
-  const changeGame = () => {
-    setRoundCounter(roundCounter + 1);
-    shuffle(array);
-    setCurrentMap(array.pop()!);
-  };
+
   const shuffle = (arr: MapData[]): MapData[] => {
     const out = arr.slice();
     for (let i = out.length - 1; i > 0; i--) {
@@ -28,6 +22,16 @@ function Game() {
       [out[i], out[r]] = [out[r], out[i]];
     }
     return out;
+  };
+
+  const [roundCounter, setRoundCounter] = useState(0);
+  const array: MapData[] = maps;
+  shuffle(array);
+  const chosen: MapData[] = [array.pop()!, array.pop()!, array.pop()!];
+
+  const changeGame = () => {
+    setRoundCounter(roundCounter + 1);
+    setCurrentMap(chosen[roundCounter]);
   };
 
   return (
