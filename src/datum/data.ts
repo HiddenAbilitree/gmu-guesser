@@ -104,12 +104,12 @@ export const maps: MapData[] = [
   },
   {
     locationName: 'Bridge Behind the Hub',
-    latlong: [38.831328, -77.303889],
+    latlong: [38.83079472, -77.30375301],
     panorama: 'pic6.jpg',
   },
   {
     locationName: 'Walkway behind the Satellite',
-    latlong: [38.83079472, -77.30375301],
+    latlong: [38.831328, -77.303889],
     panorama: 'pic7.jpg',
   },
   {
