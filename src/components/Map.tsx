@@ -168,10 +168,10 @@ export const Map = (
       Math.floor(
         Math.max(
           0,
-          (function(x){ return x > 999 ? 1000 : Math.round(x); })(
-            1000 -
+          1000 -
             markerRef
-            .current!.getLngLat().distanceTo(new LngLat(data.latlong[0], data.latlong[1]))),
+              .current!.getLngLat()
+              .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
         ),
       ),
       {
