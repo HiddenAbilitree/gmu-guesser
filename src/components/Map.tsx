@@ -24,8 +24,6 @@ export const Map = (
   const [markerExists, setMarkerExists] = useState(false);
 
   const answerRef = useRef<maplibregl.Marker | null>(null);
-  const [data, setData] = useState(props.data);
-  const [gameData, setGameData] = useState(props.gameData);
 
   const [source, setSource] = useState<GeoJSONSource | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -109,7 +107,7 @@ export const Map = (
       color: '#0AFF00',
       draggable: false,
     })
-      .setLngLat(data.latlong.reverse() as [number, number])
+      .setLngLat(props.data.latlong.reverse() as [number, number])
       .addTo(map);
     answerRef.current = answer;
 
