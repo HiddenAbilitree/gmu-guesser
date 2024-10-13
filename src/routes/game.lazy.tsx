@@ -13,9 +13,14 @@ function Game() {
     maps[Math.floor(Math.random() * maps.length)],
   );
 
+  const changeGame = () => {
+    setCurrentMap(maps[Math.floor(Math.random() * maps.length)]);
+    console.log('wtf');
+  };
+
   return (
     <>
-      <Map data={currentMap} />
+      <Map data={currentMap} changeCurrentMap={changeGame} />
       <View data={currentMap} />
     </>
   );
