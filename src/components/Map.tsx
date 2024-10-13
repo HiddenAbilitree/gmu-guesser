@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import maplibregl, { GeoJSONSource, LngLat } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { DataumProps } from '@/Types';
@@ -6,6 +13,8 @@ import { DataumProps } from '@/Types';
 export const Map = (
   props: DataumProps & {
     changeCurrentMap: () => void;
+  } & { setGameData: Dispatch<SetStateAction<number[]>> } & {
+    gameData: number[];
   },
 ) => {
   useEffect(() => {
@@ -123,8 +132,8 @@ export const Map = (
           .getLngLat()
           .distanceTo(new LngLat(props.data.latlong[0], props.data.latlong[1])),
     );
-
-    console.log(distance);
+    props.setGameData([...props.gameData, Math.floor(distance)]);
+    console.log(props.gameData);
 
     map.addLayer({
       id: 'routeLine',
