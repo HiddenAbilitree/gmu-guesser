@@ -2,7 +2,7 @@
 
 # GMU Guesser
 
-GMU Guesser, written with React, TypeScript, is a fun twist on the popular webbrowser game GeoGuesser. Players are dropped in a random location within the GMU Campus, and they must figure out where they are located on a map. There will be 3 rounds, each with a different environment. The closer your guess is to the actual location, the more points you score!
+GMU Guesser, written with React in TypeScript is a fun twist on the popular webbrowser game GeoGuesser. Players are dropped in a random location within the GMU Campus, and they must figure out where they are located on a map. There will be 3 rounds, each with a different environment. The closer your guess is to the actual location, the more points you score!
 
 # Local Hosting
 
