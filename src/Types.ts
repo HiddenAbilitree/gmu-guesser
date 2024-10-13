@@ -6,4 +6,5 @@ export type MapData = {
   locationName: string;
   latlong: [number, number];
   panorama: string;
+  description?: string;
 };
