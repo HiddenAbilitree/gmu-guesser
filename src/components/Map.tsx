@@ -17,6 +17,19 @@ export const Map = (
     gameData: number[];
   },
 ) => {
+  // create a ref of the map
+  const mapRef = useRef<maplibregl.Map | null>(null);
+
+  const markerRef = useRef<maplibregl.Marker | null>(null);
+  const [markerExists, setMarkerExists] = useState(false);
+
+  const answerRef = useRef<maplibregl.Marker | null>(null);
+  const [data, setData] = useState(props.data);
+  const [gameData, setGameData] = useState(props.gameData);
+
+  const [source, setSource] = useState<GeoJSONSource | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     const map = new maplibregl.Map({
       container: 'map', // container id
@@ -35,19 +48,22 @@ export const Map = (
     });
 
     mapRef.current = map;
-
+    map.on('load', () => {
+      map.addSource('route', {
+        type: 'geojson',
+        data: {
+          type: 'Feature',
+          properties: {},
+          geometry: {
+            type: 'LineString',
+            coordinates: [],
+          },
+        },
+      });
+      setSource(map.getSource('route') as GeoJSONSource);
+    });
     return () => mapRef.current?.remove();
   }, []);
-
-  // create a ref of the map
-  const mapRef = useRef<maplibregl.Map | null>(null);
-
-  const markerRef = useRef<maplibregl.Marker | null>(null);
-  const [markerExists, setMarkerExists] = useState(false);
-
-  const answerRef = useRef<maplibregl.Marker | null>(null);
-
-  const [submitted, setSubmitted] = useState(false);
 
   const clickCallback = useCallback(
     (e: maplibregl.MapMouseEvent) => {
@@ -88,43 +104,27 @@ export const Map = (
       answerRef.current.remove();
     }
     if (!submitted) return;
-
+    if (!source) return;
     const answer = new maplibregl.Marker({
       color: '#0AFF00',
       draggable: false,
     })
-      .setLngLat(props.data.latlong.reverse() as [number, number])
+      .setLngLat(data.latlong.reverse() as [number, number])
       .addTo(map);
     answerRef.current = answer;
 
-    if (map.getSource('route')) {
-      (map.getSource('route')! as GeoJSONSource).setData({
-        type: 'Feature',
-        properties: {},
-        geometry: {
-          type: 'LineString',
-          coordinates: [
-            userMarker.getLngLat().toArray(),
-            props.data.latlong as [number, number],
-          ],
-        },
-      });
-    } else {
-      map.addSource('route', {
-        type: 'geojson',
-        data: {
-          type: 'Feature',
-          properties: {},
-          geometry: {
-            type: 'LineString',
-            coordinates: [
-              userMarker.getLngLat().toArray(),
-              props.data.latlong as [number, number],
-            ],
-          },
-        },
-      });
-    }
+    source.setData({
+      type: 'Feature',
+      properties: {},
+      geometry: {
+        type: 'LineString',
+        coordinates: [
+          userMarker.getLngLat().toArray(),
+          props.data.latlong as [number, number],
+        ],
+      },
+    });
+
     const distance = Math.max(
       0,
       1000 -
@@ -148,7 +148,7 @@ export const Map = (
         'line-width': 8,
       },
     });
-  }, [submitted, props.data.latlong]);
+  }, [submitted, source]);
 
   const parentRef = useRef<HTMLDivElement | null>(null);
   const [mouseEntered, setMouseEntered] = useState(false);
