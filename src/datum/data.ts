@@ -1,7 +1,7 @@
 import { MapData } from '@/Types';
 
 export const maps: MapData[] = [
-  {
+  /*{
     locationName: 'Volleyball by Dorms',
     latlong: [38.833539, -77.305786],
     panorama: 'dan pan1.jpg',
@@ -24,7 +24,7 @@ export const maps: MapData[] = [
       'A science center with "164,050 square feet of new labs, classrooms, and study areas. "   ' +
       'If you look closely, there are actually molecular deisgns on the stainless steel structure of the building. ' +
       'Learn more: https://www.azahner.com/works/exploratory-hall-at-george-mason-university ',
-  },
+  },*/
   {
     locationName: 'Outside CEC Building and Aquatic Fitness Center',
     latlong: [38.827751, -77.304857],
@@ -34,13 +34,13 @@ export const maps: MapData[] = [
       '"HERD Rankings in top 100 for Engineering and Computing. Computing highest in Virginia." This location is also near the AFC, with a very large competetive and recreational pool.' +
       'Learn more: https://cec.gmu.edu/about/news-and-information/brief-history-college',
   },
-  {
+  /*{
     locationName: 'Enterprise Bus Stop',
     latlong: [38.829153, -77.305394],
     panorama: 'dan pan7.jpg',
     description:
       'Where primary transportation services occur. Also next to Enterprise Hall, a frequent area for classes, consisting of 5 floors',
-  },
+  },*/
   {
     locationName: 'Communitas Statue by JC',
     latlong: [38.829136, -77.30867],
@@ -84,7 +84,7 @@ export const maps: MapData[] = [
     latlong: [38.83346881, -77.30505978],
     panorama: 'pic4.jpg',
     description:
-      'A common, scenic hangout area after grabbing food from The Spot. The spot is known for their great vegan and vegeterian options.',
+      'A common, scenic hangout area after grabbing food from The Spot. The spot is known for its great vegan and vegetarian options.',
   },
   {
     locationName: 'Disc Golf Field Behind The Hub',
@@ -119,7 +119,7 @@ export const maps: MapData[] = [
     latlong: [38.834408, -77.304609],
     panorama: 'pic10.jpg',
     description:
-      'Holds 2.5 million gallons of water! Built in 1978, which continued to be developed until April 2020. More info: https://www.fairfaxwater.org/news/projects/university-tank-replacement',
+      'Holds 2.5 million gallons of water! Built in 1978, it continued to be developed until April 2020. More info: https://www.fairfaxwater.org/news/projects/university-tank-replacement',
   },
   {
     locationName: 'Playground Next to Water Tower',
