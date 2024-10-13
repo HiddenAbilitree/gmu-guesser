@@ -84,7 +84,7 @@ export const maps: MapData[] = [
     latlong: [38.83346881, -77.30505978],
     panorama: 'pic4.jpg',
     description:
-      'A common, scenic hangout area after grabbing food from The Spot. The spot is known for its great vegan and vegetarian options.',
+      'A common, scenic hangout area after grabbing food from The Spot.',
   },
   {
     locationName: 'Disc Golf Field Behind The Hub',
@@ -169,7 +169,7 @@ export const maps: MapData[] = [
     locationName: 'Diversity Rock',
     latlong: [38.833293, -77.310994],
     panorama: 'pic19.jpg',
-    description:
+    description: 
     'As part of the Black Lives Matter movement, students have created an amazing art piece for everyone to view. Want to connect, share, or support? Visit https://ulife.gmu.edu/supportingblacklives/'
   },
   {
@@ -177,7 +177,7 @@ export const maps: MapData[] = [
     latlong: [38.832208, -77.312903],
     panorama: 'pic20.jpg',
     description:
-      '"RAC Field is available for open rec to Mason affiliates when there are not scheduled reservations (https://recreation.gmu.edu/pool-hours/)." Play pickleball, football, soccer, or other spots here!',
+'"RAC Field is available for open rec to Mason affiliates when there are not scheduled reservations (https://recreation.gmu.edu/pool-hours/)." Play pickleball, football, soccer, or other spots here!',
   },
   {
     locationName: 'Rappahannock Parking Deck Roof',
@@ -188,6 +188,8 @@ export const maps: MapData[] = [
     locationName: 'Outside The Spot',
     latlong: [38.833679069042944, -77.30488743524396],
     panorama: 'pic22.jpg',
+    description: 
+    'Right outside student dorms, the spot is known for its great vegan and vegetarian options. Students often go here to hang out or study!',
   },
   {
     locationName: 'Slave Owner Statue',
