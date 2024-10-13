@@ -185,4 +185,19 @@ export const maps: MapData[] = [
     description:
       '"RAC Field is available for open rec to Mason affiliates when there are not scheduled reservations (https://recreation.gmu.edu/pool-hours/)." Play pickleball, football, soccer, or other spots here!',
   },
+  {
+    locationName: 'Rappahannock Parking Deck Roof',
+    latlong: [38.83514421698737, -77.30550300222104],
+    panorama: 'pic21.jpg',
+  },
+  {
+    locationName: 'Outside The Spot',
+    latlong: [38.833679069042944, -77.30488743524396],
+    panorama: 'pic22.jpg',
+  },
+  {
+    locationName: 'Slave Owner Statue',
+    latlong: [38.830388252525466, -77.30845142049195],
+    panorama: 'pic23.jpg',
+  },
 ];
