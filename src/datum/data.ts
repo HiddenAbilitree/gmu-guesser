@@ -116,4 +116,29 @@ export const maps: MapData[] = [
     latlong: [38.833608, -77.309346],
     panorama: 'pic15.jpg',
   },
+  {
+    locationName: 'Peterson Hall Rain Garden',
+    latlong: [38.834179, -77.309615],
+    panorama: 'pic16.jpg',
+  },
+  {
+    locationName: 'Bioretention Facility Outside Peterson',
+    latlong: [38.833980, -77.310112],
+    panorama: 'pic17.jpg',
+  },
+  {
+    locationName: 'Rogers Whitetop Picnic Zone',
+    latlong: [38.834159, -77.311132],
+    panorama: 'pic18.jpg',
+  },
+  {
+    locationName: 'Diversity Rock',
+    latlong: [38.833293, -77.310994],
+    panorama: 'pic19.jpg',
+  },
+  {
+    locationName: 'The RAC Field',
+    latlong: [38.832208, -77.312903],
+    panorama: 'pic20.jpg',
+  },
 ];
