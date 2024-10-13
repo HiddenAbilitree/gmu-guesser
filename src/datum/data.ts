@@ -78,6 +78,11 @@ export const maps: MapData[] = [
   {
     locationName: 'Walkway behind the Satellite',
     latlong: [38.83079472,-77.30375301],
-    panorama: 'p7.jpg',
+    panorama: 'pic7.jpg',
+  },
+  {
+    locationName: 'Walkway Infront of the Satellite',
+    latlong: [38.831414, -77.304414],
+    panorama: 'pic8.jpg',
   },
 ];
