@@ -14,6 +14,7 @@ GMU Guesser, written with React, TypeScript, is a fun twist on the popular webbr
 bun i
 bun run build
 bun run preview
-o + enter (or visit the localhost url)
+o #+ enter (or visit the localhost url)
+
 ```
 
