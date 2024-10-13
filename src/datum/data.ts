@@ -169,6 +169,8 @@ export const maps: MapData[] = [
     locationName: 'Diversity Rock',
     latlong: [38.833293, -77.310994],
     panorama: 'pic19.jpg',
+    description:
+    'As part of the Black Lives Matter movement, students have created an amazing art piece for everyone to view. Want to connect, share, or support? Visit https://ulife.gmu.edu/supportingblacklives/'
   },
   {
     locationName: 'The RAC Field',
