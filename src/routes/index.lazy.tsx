@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute('/')({
 function Index() {
   return (
     <InfoWrapper>
-      <div className="max-w-2xl p-4 mx-auto my-8 text-white bg-gray-900/40 backdrop-blur outline-gray-800/70 outline outline-2 rounded-xl">
+      <div className="mx-auto my-8 max-w-2xl rounded-xl bg-gray-900/40 p-4 text-white outline outline-2 outline-gray-800/70 backdrop-blur">
         <h1 className="text-4xl font-semibold">GMU Guesser</h1>
         <p className="my-2 text-xl text-gray-200">
           You're placed in a randomly photographed place on the Mason campus and
@@ -17,7 +17,7 @@ function Index() {
         </p>
         <Link
           to="/game"
-          className="p-2 bg-green-500 rounded outline outline-1 outline-green-500"
+          className="rounded bg-green-500 p-2 outline outline-1 outline-green-500"
         >
           Get started 🚀
         </Link>
