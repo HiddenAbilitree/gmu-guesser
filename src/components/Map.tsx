@@ -127,7 +127,7 @@ export const Map = (
           .getLngLat()
           .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
     );
-    setGameData((currentState) => [...currentState, Math.floor(distance)]);
+    setGameData((currentState) => [...currentState, Math.round(distance)]);
 
     map.addLayer({
       id: 'routeLine',
