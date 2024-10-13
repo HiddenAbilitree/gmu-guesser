@@ -6,8 +6,12 @@ GMU Guesser, written with React, TypeScript, is a fun twist on the popular webbr
 
 # Installation
 
-1. Clone the repo!
-2. Download [bun](https://bun.sh/docs/installation)!
-3. `bun i`
-4. `bun run build`
-5. `bun run preview`
+1. Download [bun](https://bun.sh/docs/installation)!
+2. Clone the repo!
+3. cd into the repo!
+4. ```bash
+bun i
+bun run build
+bun run preview
+```
+
