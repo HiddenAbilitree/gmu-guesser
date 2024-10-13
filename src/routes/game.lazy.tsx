@@ -15,9 +15,19 @@ function Game() {
     maps[Math.floor(Math.random() * maps.length)],
   );
   const [roundCounter, setRoundCounter] = useState(0);
+  const array: MapData[] = maps;
   const changeGame = () => {
     setRoundCounter(roundCounter + 1);
-    setCurrentMap(maps[Math.floor(Math.random() * maps.length)]);
+    shuffle(array);
+    setCurrentMap(array.pop()!);
+  };
+  const shuffle = (arr: MapData[]): MapData[] => {
+    const out = arr.slice();
+    for (let i = out.length - 1; i > 0; i--) {
+      const r = Math.floor(Math.random() * (i + 1));
+      [out[i], out[r]] = [out[r], out[i]];
+    }
+    return out;
   };
 
   return (

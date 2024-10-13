@@ -37,13 +37,13 @@ export const Map = (
         compact: true,
       },
       maxBounds: [
-        [-77.31456068310384,38.82217363377614],
-        [-77.29968251510037,38.83736941965788],
+        [-77.31456068310384, 38.82217363377614],
+        [-77.29968251510037, 38.83736941965788],
       ],
     });
 
     mapRef.current = map;
-    map.on('load', () => {
+    map.once('load', () => {
       map.addSource('route', {
         type: 'geojson',
         data: {
@@ -86,7 +86,9 @@ export const Map = (
       map.off('click', clickCallback);
     };
   }, [mapRef, clickCallback]);
+
   const { data, changeCurrentMap, setGameData } = props;
+
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -184,6 +186,24 @@ export const Map = (
         id="map"
         className="h-full w-full rounded-t-3xl bg-slate-200 opacity-60 shadow-md transition-all map-open:rounded-t-lg map-open:opacity-100"
       ></div>
+
+      {submitted && (
+        <div className="fixed left-1/2 top-1/2 isolate z-50 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-lg bg-black p-5 text-foreground">
+          <h1>
+            Points:{' '}
+            {Math.floor(
+              Math.max(
+                0,
+                1000 -
+                  markerRef
+                    .current!.getLngLat()
+                    .distanceTo(new LngLat(data.latlong[0], data.latlong[1])),
+              ),
+            )}
+          </h1>
+          <p>{data.description}</p>
+        </div>
+      )}
       {markerExists ? (
         submitted ? (
           <button
